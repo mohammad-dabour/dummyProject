@@ -8,7 +8,7 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * Docker, and docker-compose for both app and concourese ci
  * golang
  * ansible
- * consoul
+ * consul
  * nginx
  
  I have read many concourse ci tutorials and docouments however in addition to  official docoumentation i think [this one was helpful too]
