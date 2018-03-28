@@ -63,8 +63,25 @@ jobs:
       trigger: true
       passed: [build-wiki]
     - task: run-docker-ansible
-      file: wiki-server/ci/tasks/ansible.yml 
-      params:
-        USER: {{docker_user}} 
-        password: {{PASS}}
-        username: {{USER}}
+      config:
+        platform: linux
+        image_resource:
+            type: docker-image
+            source:
+              repository: ((reg_address)):5000/ansible
+              insecure_registries: ["((reg_address)):5000"]
+        params:
+           USER: {{docker_user}}
+           password: {{PASS}}
+           username: {{USER}}
+        run:
+         path: /bin/bash
+         args:
+           - -c
+           - |
+              ansible-playbook -v -i /tmp/inventory /tmp/playbook.yml -u $USER --private-key /tmp/tsa_host_key --sudo --extra-vars "remoteUser=$USER user=$username pass=$password"
+
+
+
+
+
