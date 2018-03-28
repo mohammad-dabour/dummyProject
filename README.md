@@ -206,6 +206,9 @@ This will build the ansible image with passing necessery keys localy also the im
 
  
  
+ ##### The Ansible pipeline will look something like this:
+![alt text]( https://raw.githubusercontent.com/mohammad-dabour/dummyProject/master/Screen%20Shot%202018-03-28%20at%203.02.16%20PM.png)
+
  I have read concourse official docoumentation mainly  however in addition to the official docoumentation  i think [this one was helpful too]
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
