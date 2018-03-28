@@ -146,9 +146,18 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
  
  ##### What's going on with [ansible-pipeline.yml]  ?
  
+ ###### set pipeline:
+ 
+ ```
+ fly -t lite set-pipeline -p ansible-deployer -c ci/ansible-pipeline.yml  -l .credentials.yml --var="ssh_container_key=$(cat path/to/key/file)" --var "reg_address=172.27.149.231"
+ 
+ reg_address: is your local dockerhub registry
+ ```
  
  
  ```
+ 
+ 
  resources:
 - name: ansible-deployer
   type: git
@@ -162,8 +171,12 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
 - name: ansible-docker
   type: docker-image
   source:
-    repository: {{reg_address}}
-    insecure_registries: [{{reg_host}}] 
+    repository: ((reg_address)):5000/ansible
+    insecure_registries: ["((reg_address)):5000"]
+    
+## Above insecure_registries: ((reg_address)) will be taken from --var "reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"" during the setup.
+
+Also note: $(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')" was used on mac os, on gcloud instance i used  awk '/(instance)/{print $1}' /etc/hosts.
 
 jobs:
 - name: build-deployer
@@ -176,11 +189,12 @@ jobs:
          build_args:
             SSH_KEY: {{ssh_container_key}}
             USER: {{docker_user}}
- ```
+This will build the ansible image with passing necessery keys localy also the image will be in local registry or private repo.
+```
+
  
  
- 
- I have read many concourse ci tutorials and docouments however in addition to the official docoumentation i think [this one was helpful too]
+ I have read concourse official docoumentation mainly  however in addition to the official docoumentation  i think [this one was helpful too]
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
  [this one was helpful too]: https://github.com/JeffDeCola/hello-go
