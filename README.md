@@ -11,7 +11,7 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * consul
  * nginx
  
- I have read many concourse ci tutorials and docouments however in addition to  official docoumentation i think [this one was helpful too]
+ I have read many concourse ci tutorials and docouments however in addition to the official docoumentation i think [this one was helpful too]
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
  [this one is helpful too]: https://github.com/JeffDeCola/hello-go
