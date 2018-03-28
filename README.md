@@ -13,7 +13,7 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  
  
  
- ####What is going on ?
+ #### What is going on ?
  
  
  
