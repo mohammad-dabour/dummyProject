@@ -144,6 +144,39 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
 
  
  
+ ##### What's going on with ansible-pipeline.yml  ?
+ 
+ 
+ 
+ ```
+ resources:
+- name: ansible-deployer
+  type: git
+  source:
+    uri: https://github.com/mohammad-dabour/ansible-concourse-docker.git
+    password: {{PASS}}
+    username: {{USER}}
+    branch: master
+
+
+- name: ansible-docker
+  type: docker-image
+  source:
+    repository: {{reg_address}}
+    insecure_registries: [{{reg_host}}] 
+
+jobs:
+- name: build-deployer
+  plan:
+    - get: ansible-deployer
+      trigger: true
+    - put: ansible-docker
+      params: 
+         build: ansible-deployer
+         build_args:
+            SSH_KEY: {{ssh_container_key}}
+            USER: {{docker_user}}
+ ```
  
  
  
@@ -152,3 +185,4 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
  [official documentation]: https://concourse-ci.org/docker-repository.html
  [this one was helpful too]: https://github.com/JeffDeCola/hello-go
  [ansible-concourse-docker]: https://github.com/mohammad-dabour/ansible-concourse-docker.git
+ [ansible-pipeline.yml]: https://github.com/mohammad-dabour/ansible-concourse-docker/blob/master/ci/ansible-pipeline.yml
