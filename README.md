@@ -212,7 +212,7 @@ This will build the ansible image with passing necessery keys localy also the im
 
 
 Thigs to watch out: 
-* https://raw.githubusercontent.com/mohammad-dabour/ansible-concourse-docker/master/inventory This ansible inventory file has placeholders, replace with what fitting your need. you can divide the playbook and remanage things using roles, there is a lot of improvment space for this dummy project!. My main focus was about understanding how concourse ci is working.
+*  file has placeholders, replace with what fitting your need. you can divide the playbook and remanage things using roles, there is a lot of improvment space for this dummy project!. My main focus was about understanding how concourse ci is working.
 
  I have read concourse official docoumentation mainly  however in addition to the official docoumentation  i think [this one was helpful too]
  
@@ -221,3 +221,4 @@ Thigs to watch out:
  [ansible-concourse-docker]: https://github.com/mohammad-dabour/ansible-concourse-docker.git
  [ansible-pipeline.yml]: https://github.com/mohammad-dabour/ansible-concourse-docker/blob/master/ci/ansible-pipeline.yml
  [docker-nginx]: https://github.com/mohammad-dabour/docker-nginx
+ [This ansible inventory]: https://raw.githubusercontent.com/mohammad-dabour/ansible-concourse-docker/master/inventory
