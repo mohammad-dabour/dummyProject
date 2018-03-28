@@ -212,7 +212,7 @@ This will build the ansible image with passing necessery keys localy also the im
 
 
 Thigs to watch out: 
-*  file has placeholders, replace with what fitting your need. you can divide the playbook and remanage things using roles, there is a lot of improvment space for this dummy project!. My main focus was about understanding how concourse ci is working.
+*  [This ansible inventory] file has placeholders, replace with what fitting your need. you can divide the playbook and remanage things using roles, there is a lot of improvment space for this dummy project!. My main focus was about understanding how concourse ci is working.
 
  I have read concourse official docoumentation mainly  however in addition to the official docoumentation  i think [this one was helpful too]
  
