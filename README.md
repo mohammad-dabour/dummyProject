@@ -98,7 +98,10 @@ With every git push on the resource wiki-server which reperesnts dummywikiapp.gi
       params: {build: "wiki-build"}
 
 
-If the wikiserver-test job passed. code build starts. which will produce wikigoapp-docker into mdab0ur/wikigoapp my repostry on dockerhub. you can use your own repo, do not depend on mine. Also you can set it up as local registry we'll see ansible docker image loaded into local registry.
+If the wikiserver-test job passed. code build starts. 
+which will produce wikigoapp-docker into mdab0ur/wikigoapp my repostry on dockerhub.
+you can use your own repo, do not depend on mine.
+Also you can set it up as local registry we'll see ansible docker image loaded into local registry.
 
 
 
@@ -130,11 +133,12 @@ If the wikiserver-test job passed. code build starts. which will produce wikigoa
               ansible-playbook -v -i /tmp/inventory /tmp/playbook.yml -u $AnsibleUSER --private-key /tmp/tsa_host_key --sudo --extra-vars "remoteUser=$USER user=$username pass=$password" 
 
 
-Last joib after making  sure your compoenents images were build successfuly, then run-docker-ansible reg_address was passed as :  
+Last joib after making  sure your compoenents images were build successfuly,
+then run-docker-ansible reg_address was passed as :  
 
 --var="reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
 
-it will start deploying reffering  to our [ansible-concourse-docker] https://github.com/mohammad-dabour/ansible-concourse-docker
+It will start deploying reffering  to our [ansible-concourse-docker]
 
 ```
 
