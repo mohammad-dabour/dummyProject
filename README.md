@@ -158,7 +158,7 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
  ###### set pipeline:
  
  ```
- fly -t lite set-pipeline -p ansible-deployer -c ci/ansible-pipeline.yml  -l .credentials.yml --var="ssh_container_key=$(cat path/to/key/file)" --var "reg_address=172.27.149.231"
+ fly -t lite set-pipeline -p ansible-deployer -c ci/ansible-pipeline.yml  -l .credentials.yml --var="ssh_container_key=$(cat path/to/key/file)" --var "reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
  
  reg_address: is your local dockerhub registry
  ```
