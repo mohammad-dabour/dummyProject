@@ -13,8 +13,25 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * registrator
  
  
+ #### This pipeline having  another par called [ansible-concourse-docker]. 
+ The ansible part, is a job building and preparing ansible docker image with necessary access and playbooks.
+ The image will be pushed to local registry, while some other images like wikiapp will be pushed to my https://hub.docker.com 
+ Another the wikiserver-test pipeline will use this image to do the release.
  
  #### What is going on ?
+ 
+ ```
+ fly  -t lite set-pipeline -p wikiserver-test -c ci/wikiserver-pipline.yml  -l .credentials.yml --var="reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
+
+.credentials.yml will have the following content
+
+PASS: USER
+USER: USER
+docker_user: USER
+ ```
+
+
+ 
  
  
  
@@ -23,6 +40,4 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
  [this one was helpful too]: https://github.com/JeffDeCola/hello-go
-
-
-
+ [ansible-concourse-docker]: https://github.com/mohammad-dabour/ansible-concourse-docker.git
