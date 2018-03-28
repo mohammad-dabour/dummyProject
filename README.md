@@ -146,6 +146,11 @@ It will start deploying reffering  to our:
 https://github.com/mohammad-dabour/ansible-concourse-docker.git
 ```
 
+
+##### The pipeline will look something like this:
+
+![alt text](https://raw.githubusercontent.com/mohammad-dabour/dummyProject/master/Screen%20Shot%202018-03-28%20at%202.49.42%20PM.png)
+
  
  
  ##### What's going on with [ansible-pipeline.yml]  ?
