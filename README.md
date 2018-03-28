@@ -10,6 +10,7 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * ansible
  * consul
  * nginx
+ * registrator
  
  
  
