@@ -14,9 +14,9 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  
  
  #### This pipeline having  another par called [ansible-concourse-docker]. 
- The ansible part, is a job building and preparing ansible docker image with necessary access and playbooks.
+ The ansible part, is a job for building and preparing ansible docker image with necessary access and playbooks.
  The image will be pushed to local registry, while some other images like wikiapp will be pushed to my https://hub.docker.com 
- Another the wikiserver-test pipeline will use this image to do the release.
+ Another the wikiserver-test pipeline will use the ansible image to do the release.
  
  #### What is going on ?
  
