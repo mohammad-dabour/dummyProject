@@ -1,7 +1,7 @@
 #### dummyProject
 This is Foo Bar project implementing a pipeline using Concourse CI 
 
-###### This pipeline uses many parties, there's no why regarding to what i used. As this is not production app. I wanted to do a full build and deployment for multi components using different approaches that can introduce me to  different possible features in concourse ci while am learning, also to integrate other tools like ansible and to see how can i utilize docker-compose for dummy simple app, the pipeline is not for production it is AS is.
+###### This pipeline uses many parties, there's no why regarding to what i used. As this is not production app. I wanted to do a full build and deployment for multi components using different approaches that can introduce me to  different possible features in concourse ci while am learning, also to integrate other tools like ansible and to see how can i utilize docker-compose within the deployment part (i do  not recomaned  the way i did docker-compose for production), but for dummy simple app this should be fime, the pipeline is not for production it is AS is.
 
 #### Technogloies :
  * Local concourse ci where i used the docker version provided by [official documentation] 
