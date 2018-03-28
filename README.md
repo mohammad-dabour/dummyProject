@@ -138,8 +138,8 @@ then run-docker-ansible reg_address was passed as :
 
 --var="reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
 
-It will start deploying reffering  to our [ansible-concourse-docker]
-
+It will start deploying reffering  to our:
+https://github.com/mohammad-dabour/ansible-concourse-docker.git
 ```
 
  
