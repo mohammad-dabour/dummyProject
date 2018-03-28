@@ -5,6 +5,7 @@ import (
         "testing"
 )
 
+// This is not real test just to let this demo pass!
 func TestSave(t *testing.T) {
         n, err := fmt.Println("Hello World")
 
