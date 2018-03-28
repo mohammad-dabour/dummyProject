@@ -1,5 +1,5 @@
 #### dummyProject
-This is Foo Bar project implementing Concourse CI 
+This is Foo Bar project implementing a pipeline using Concourse CI 
 
 ###### This pipeline uses many parties, there's no why regarding to what i used. As this is not production app. i wanted to do a full deployment for multi components using different approaches that can introduce me to  different possible features in concourse ci while am learning, the pipeline is not for production it is AS is.
 
