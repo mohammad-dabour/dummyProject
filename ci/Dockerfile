@@ -2,7 +2,7 @@
 
 FROM golang:1.10.0
 
-MAINTAINER Mohammad Dabour (https://github.com/JeffDeCola/hello-go)
+MAINTAINER Mohammad Dabour git@github.com:mohammad-dabour/dummyProject.git
 # Put the binary into the container
 RUN mkdir -p /app
 WORKDIR /app
