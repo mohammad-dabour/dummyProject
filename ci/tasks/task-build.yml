@@ -1,0 +1,25 @@
+platform: linux
+image_resource:
+    type: docker-image
+    source:
+       repository: golang
+       tag: 1.10.0
+inputs:
+- name: wiki-server
+outputs:
+- name: wiki-build
+run:
+   path: /bin/bash
+   args:
+     - -c
+     - |
+  
+        #go build -o wiki-build/wiki-app wiki-server/webserver/wiki.go wiki-server/webserver/wikiserver.go
+        pwd
+        ls -lths
+        ls wiki-server/ci/Dockerfile
+        cp wiki-server/ci/Dockerfile wiki-build/Dockerfile
+        cp wiki-server/webserver/wiki.go wiki-server/webserver/wikiserver.go wiki-build/
+        cp wiki-server/webserver/*.html wiki-build/
+        cd wiki-build
+        ls ./

@@ -1,0 +1,15 @@
+platform: linux
+image_resource:
+    type: docker-image
+    source:
+       repository: ubuntu
+       tag: "latest"
+inputs:
+- name: wiki-server
+run:
+   path: /bin/bash
+   args:
+      - -c
+      - |
+          echo -e "Publish test results << HERE >> because the damn concourse does not provide publish feture "
+          echo "Test Passed. Good job "

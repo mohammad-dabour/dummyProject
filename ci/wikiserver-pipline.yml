@@ -1,0 +1,70 @@
+resources:
+- name: wiki-server
+  type: git
+  source:
+    uri: https://gitlab.com/mdab0ur/dummywikiapp.git
+    password: {{PASS}}
+    username: {{USER}}
+    branch: master
+
+- name: nginx-server
+  type: git
+  source:
+    uri: https://gitlab.com/mdab0ur/docker-nginx.git
+    password: {{PASS}}
+    username: {{USER}}
+    branch: master
+
+- name: wikigoapp-docker
+  type: docker-image
+  source:
+    repository: mdab0ur/wikigoapp
+    username: {{USER}}
+    password: {{PASS}}
+
+- name: nginx-docker
+  type: docker-image
+  source:
+    repository: mdab0ur/concourse
+    username: {{USER}}
+    password: {{PASS}}
+
+jobs:
+- name: wikiserver-test
+  plan:
+    - get: wiki-server
+      trigger: true
+    - task: test-wikiserver
+      file: wiki-server/ci/tasks/test-task.yml
+    - task: publish-testing-results-wikiserver
+      file: wiki-server/ci/tasks/test-publish.yml
+- name: build-wiki
+  plan:
+    - get: wiki-server
+      trigger: true
+      passed: [wikiserver-test]
+    - task: task-build
+      file: wiki-server/ci/tasks/task-build.yml
+    - put: wikigoapp-docker
+      params: {build: "wiki-build"}
+
+- name: docker-nginx-build
+  plan:
+    - get: nginx-server
+    - put: nginx-docker
+      params: {build: nginx-server}
+
+- name: job-deploy-app
+  plan:
+    - get: nginx-server
+      trigger: true
+      passed: [docker-nginx-build]
+    - get: wiki-server
+      trigger: true
+      passed: [build-wiki]
+    - task: run-docker-ansible
+      file: wiki-server/ci/tasks/ansible.yml 
+      params:
+        USER: {{docker_user}} 
+        password: {{PASS}}
+        username: {{USER}}

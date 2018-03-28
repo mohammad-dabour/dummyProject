@@ -1,0 +1,20 @@
+platform: linux
+image_resource:
+    type: docker-image
+    source:
+       repository: golang
+       tag: 1.10.0
+inputs:
+- name: wiki-server
+
+outputs:
+- name: wiki-server-test
+run:
+   path: /bin/bash
+   args:
+      - -c
+      - |
+          cd wiki-server/webserver
+          go test -cover  wiki.go wikiserver.go wiki_test.go wikiserver_test.go |tee ../../wiki-server-test/wiki-server-test-results$(date +%s).txt
+          echo "Publish test results << HERE >> because the damn concourse does not provide publish feture "
+          cat ../../wiki-server-test/wiki-server-test-results*
