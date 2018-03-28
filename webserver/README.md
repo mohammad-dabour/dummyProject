@@ -1,4 +1,4 @@
-# This app compiled and tested after following this tutorial article.
+# This dummy app developed, compiled and tested after following this tutorial article.
 https://golang.org/doc/articles/wiki/
 
 ### deployed as docker container and it's configs:
