@@ -12,8 +12,8 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * nginx
  * registrator
  
- #### related repos:
- * [ansible-concourse-docker]
+ #### Other related repos belongs to this project:
+ * [ansible-concourse-docker] : an image i have built and prepared for this project.
  * [docker-nginx]
  
  
