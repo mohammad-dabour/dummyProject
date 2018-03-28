@@ -15,3 +15,6 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
  [this one was helpful too]: https://github.com/JeffDeCola/hello-go
+
+
+####What is going on ?
