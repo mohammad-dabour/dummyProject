@@ -14,4 +14,4 @@ This is Foo Bar project implementing Concourse CI
  I have read many concourse ci tutorials and docouments however in addition to  official docoumentation i think [this one is helpful too] :
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
-[this one is helpful too] :https://github.com/JeffDeCola/hello-go
+ [this one is helpful too] :https://github.com/JeffDeCola/hello-go
