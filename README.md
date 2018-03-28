@@ -14,4 +14,4 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  I have read many concourse ci tutorials and docouments however in addition to the official docoumentation i think [this one was helpful too]
  
  [official documentation]: https://concourse-ci.org/docker-repository.html
- [this one is helpful too]: https://github.com/JeffDeCola/hello-go
+ [this one was helpful too]: https://github.com/JeffDeCola/hello-go
