@@ -12,6 +12,10 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  * nginx
  * registrator
  
+ #### related repos:
+ * [ansible-concourse-docker]
+ * [docker-nginx]
+ 
  
  #### This project having  another part called [ansible-concourse-docker]. 
  The ansible part, is a job for building and preparing ansible docker image with necessary access and playbooks.
@@ -200,3 +204,4 @@ This will build the ansible image with passing necessery keys localy also the im
  [this one was helpful too]: https://github.com/JeffDeCola/hello-go
  [ansible-concourse-docker]: https://github.com/mohammad-dabour/ansible-concourse-docker.git
  [ansible-pipeline.yml]: https://github.com/mohammad-dabour/ansible-concourse-docker/blob/master/ci/ansible-pipeline.yml
+ [docker-nginx]: https://github.com/mohammad-dabour/docker-nginx
