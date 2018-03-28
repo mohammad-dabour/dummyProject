@@ -2,7 +2,7 @@ resources:
 - name: wiki-server
   type: git
   source:
-    uri: https://gitlab.com/mdab0ur/dummywikiapp.git
+    uri: https://github.com/mohammad-dabour/dummyProject.git
     password: {{PASS}}
     username: {{USER}}
     branch: master
@@ -10,7 +10,7 @@ resources:
 - name: nginx-server
   type: git
   source:
-    uri: https://gitlab.com/mdab0ur/docker-nginx.git
+    uri: https://github.com/mohammad-dabour/docker-nginx.git
     password: {{PASS}}
     username: {{USER}}
     branch: master
