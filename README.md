@@ -37,6 +37,33 @@ I did not store it on github, it is within concourseci configs, if needed use va
  ```
 
 
+```
+# wikiserver-pipline.yml
+we use follwong resources for the main piepline git and docker-image 2 bellow are samples.
+resources:
+- name: wiki-server
+  type: git
+  source:
+    uri: https://gitlab.com/mdab0ur/dummywikiapp.git
+    password: {{PASS}}
+    username: {{USER}}
+    branch: master
+
+- name: wikigoapp-docker
+  type: docker-image
+  source:
+    repository: mdab0ur/wikigoapp
+    username: {{USER}}
+    password: {{PASS}}
+{{USER}} and {{PASS}} will be loaded from .credentials.yml
+
+You can use github ssh and load priavte keys using --var :
+
+--var="ssh_container_key=$(cat you/key/file)"
+Adding they keys to .credentials.yml did not work for me, as am using concourse ci v3.9 but using --var worked.
+
+```
+
  
  
  
