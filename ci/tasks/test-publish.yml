@@ -11,5 +11,5 @@ run:
    args:
       - -c
       - |
-          echo -e "Publish test results << HERE >> because the damn concourse does not provide publish feture "
+          echo -e "Publish test results << HERE >> Just dummy  publish  "
           echo "Test Passed. Good job "
