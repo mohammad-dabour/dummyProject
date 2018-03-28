@@ -28,7 +28,9 @@ This is Foo Bar project implementing a pipeline using Concourse CI
  ##### set pipeline:
  
  ```
- fly  -t lite set-pipeline -p wikiserver-test -c ci/wikiserver-pipline.yml  -l .credentials.yml --var="reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
+ export registry_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')
+ 
+ fly  -t lite set-pipeline -p wikiserver-test -c ci/wikiserver-pipline.yml  -l .credentials.yml --var="reg_address=$registry_address"
 
 .credentials.yml will have the following content
 
@@ -158,7 +160,8 @@ https://github.com/mohammad-dabour/ansible-concourse-docker.git
  ###### set pipeline:
  
  ```
- fly -t lite set-pipeline -p ansible-deployer -c ci/ansible-pipeline.yml  -l .credentials.yml --var="ssh_container_key=$(cat path/to/key/file)" --var "reg_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')"
+ export registry_address=$(ifconfig|awk '/(inet)/ && !/(inet6)/&& !/127.0.0.1/{print $2}')
+ fly -t lite set-pipeline -p ansible-deployer -c ci/ansible-pipeline.yml  -l .credentials.yml --var="ssh_container_key=$(cat path/to/key/file)" --var "reg_address=$registry_address"
  
  reg_address: is your local dockerhub registry
  ```
