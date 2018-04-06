@@ -9,6 +9,7 @@ MAINTAINER Mohammad Dabour git@github.com:mohammad-dabour/dummyProject.git
 RUN mkdir -p /app
 WORKDIR /app
 ADD . /app
+#I assume the app already passed the test phase.
 RUN go build -o wiki-app wiki.go wikiserver.go
 
 
